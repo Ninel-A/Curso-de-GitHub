@@ -733,7 +733,7 @@ node_modules/
 .DS_Store
 ```
 ---
-#RESUMEN DE COMANDOS IMPORTANTES
+# RESUMEN DE COMANDOS IMPORTANTES
 
 ```bash
 

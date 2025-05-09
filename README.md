@@ -348,8 +348,8 @@ Es uno de los flujos más clásicos. Divide el proyecto en **ramas principales**
 ### 🌳 Ramas principales
 | Rama | Propósito |
 |------|-----------|
-| `main` o `master` | Código en producción (estable) |
-| `develop` | Código en pre-producción, donde se integran nuevas funcionalidades |
+| main o master | Código en producción (estable) |
+| develop | Código en pre-producción, donde se integran nuevas funcionalidades |
 
 ---
 
@@ -357,9 +357,9 @@ Es uno de los flujos más clásicos. Divide el proyecto en **ramas principales**
 
 | Rama | ¿Desde dónde se crea? | ¿Dónde se fusiona? | Convención |
 |------|------------------------|--------------------|------------|
-| `feature-*` | `develop` | `develop` | Nuevas características |
-| `release-*` | `develop` | `main` y `develop` | Preparar lanzamientos |
-| `hotfix-*` | `main` | `main` y `develop` (o release) | Solución urgente a errores |
+| feature-* | develop | develop | Nuevas características |
+| release-* | develop | main y develop | Preparar lanzamientos |
+| hotfix-* | main | main y develop (o release) | Solución urgente a errores |
 
 ---
 
@@ -380,7 +380,7 @@ $ git branch -d feature-nueva-funcionalidad
 
 
 ```
-El flag `--no-ff` asegura que se cree un commit de merge, útil para rastrear los cambios de esa rama.
+El flag --no-ff asegura que se cree un commit de merge, útil para rastrear los cambios de esa rama.
 
 ---
 
@@ -402,7 +402,7 @@ $ git branch -d release-1.0
 
 ### Ramas hotfix
 
-Son urgencias. Se crean desde `main` para solucionar errores ya desplegados.
+Son urgencias. Se crean desde main para solucionar errores ya desplegados.
 ```bash
 $ git checkout -b hotfix-1.0.1 main
 # corregimos el error...
@@ -423,10 +423,10 @@ $ git branch -d hotfix-1.0.1
 
 Una alternativa más simple que GitFlow, ideal para despliegues frecuentes. Se basa en:
 
-1. Crear una rama desde `main`
+1. Crear una rama desde main
 2. Subir cambios y abrir una Pull Request
 3. Discutir y revisar los cambios
-4. Fusionar en `main`
+4. Fusionar en main
 
 ```bash
 $ git checkout -b feature-login main
@@ -441,9 +441,9 @@ Está orientado a colaboración, uso intensivo de PRs y CI (integración continu
 
 ## TRUNK BASED DEVELOPMENT
 
-Aquí **todo el trabajo ocurre en la rama principal** (`main` o `trunk`). Las ramas auxiliares existen pero duran poco (1-2 días máximo).
+Aquí **todo el trabajo ocurre en la rama principal** (main o trunk). Las ramas auxiliares existen pero duran poco (1-2 días máximo).
 
-- Se hacen **commits frecuentes y pequeños** directamente en `main`
+- Se hacen **commits frecuentes y pequeños** directamente en main
 - Requiere un **sistema robusto de CI/CD** para detectar errores antes de llegar a producción
 - Ideal para equipos con mucha confianza y colaboración
 
@@ -464,7 +464,7 @@ Con rollback automático, tests y monitoreo constante, se reduce el miedo a fall
 Una estrategia híbrida para balancear velocidad y revisión. Clasifica los cambios en 3 tipos:
 
 ### 🚢 Ship
-Fusionas directamente a `main`, sin revisión. Ideal para:
+Fusionas directamente a main, sin revisión. Ideal para:
 - Documentación
 - Fixes simples
 - Refactors triviales
@@ -569,9 +569,9 @@ Lo ideal es comenzar con la acción que se realiza:
 - **hotfix/** para soluciones urgentes
 - **experiment/** para pruebas que probablemente no serán fusionadas
 
-Un buen nombre sería: `feature/login-form` o `bug/fix-navbar-overlap`.
+Un buen nombre sería: *feature/login-form* o *bug/fix-navbar-overlap*.
 
-Si tu equipo usa alguna herramienta de seguimiento como Jira, también puedes incluir el ID del ticket en el nombre de la rama, como por ejemplo: `feature/JIRA-1234-new-dashboard`.
+Si tu equipo usa alguna herramienta de seguimiento como Jira, también puedes incluir el ID del ticket en el nombre de la rama, como por ejemplo: *feature/JIRA-1234-new-dashboard*.
 
 ```bash
 $ git checkout -b feature/formulario-contacto
@@ -581,9 +581,9 @@ $ git checkout -b feature/formulario-contacto
 
 ## ¿Debería alterar el historial de mi proyecto?
 
-Modificar el historial (con `git rebase`, por ejemplo) no suele ser una buena idea, **a menos que hayas expuesto información sensible**, como contraseñas o claves de API. En esos casos, lo mejor es rotar las claves y contraseñas lo antes posible, ya que eliminarlas del historial **no garantiza que desaparezcan realmente**.
+Modificar el historial (con *git rebase*, por ejemplo) no suele ser una buena idea, **a menos que hayas expuesto información sensible**, como contraseñas o claves de API. En esos casos, lo mejor es rotar las claves y contraseñas lo antes posible, ya que eliminarlas del historial **no garantiza que desaparezcan realmente**.
 
-Si el error no es grave, como un commit mal hecho o código que ya no sirve, lo recomendable es usar `git revert` para **crear un nuevo commit que revierta los cambios anteriores**, manteniendo así un historial transparente y seguro.
+Si el error no es grave, como un commit mal hecho o código que ya no sirve, lo recomendable es usar *git revert* para **crear un nuevo commit que revierta los cambios anteriores**, manteniendo así un historial transparente y seguro.
 
 ```bash
 $ git revert ID-del-commit
@@ -611,4 +611,63 @@ Luego, para hacer el último commit se usa:
 $ git commit --amend -m "Mensaje del commit"
 ```
 ---
-# 🧪 HOOKS, ALIAS Y TRUCOS EN GIT
+# HOOKS, ALIAS Y TRUCOS EN GIT
+
+## ⚙️ ¿Qué es un hook en Git?
+
+Los **hooks** (o “ganchos”) son como trampitas automatizadas que Git ejecuta **cuando pasa algo**. Por ejemplo: justo antes de hacer un commit, justo después de hacer un merge, etc. Sirven para automatizar tareas como verificar errores, dar mensajes, o evitar que subas cosas que no deberías.
+
+Estos scripts van en la carpeta *.git/hooks/* dentro de tu proyecto. Ahí ya vienen unos de ejemplo, pero los podés editar o reemplazar por scripts propios.
+
+---
+
+## 🖥Hooks del lado del cliente
+
+Estos solo funcionan en **tu máquina local**. No se sincronizan con el repositorio remoto ni con tus compas. Podés tener un hook diferente en cada compu, incluso si el repo es el mismo.
+
+### Algunos hooks útiles:
+
+- **pre-commit**  
+  Se ejecuta justo antes de hacer un commit. Podés usarlo para verificar errores, correr un linter o evitar que se suban archivos sin revisar.
+
+- **prepare-commit-msg**  
+  Modifica automáticamente el mensaje del commit (aunque después lo podés editar igual). Útil para agregar info por defecto.
+
+- **commit-msg**  
+  Revisa si el mensaje cumple una convención (como *feat:*, *fix:*, etc). Muy bueno si seguís reglas en los commits.
+
+- **post-commit**  
+  Este corre después de hacer un commit. Por ejemplo, podrías enviar una notificación a Slack o imprimir un mensajito gracioso en consola.
+
+- **pre-push**  
+  Se ejecuta justo antes de hacer *git push*. Ideal para correr tests y frenar el push si algo falla.
+
+- **post-checkout y post-merge**  
+  Se usan después de cambiar de rama o hacer merge. Podés limpiar archivos temporales o borrar ramas que ya no usás.
+
+---
+
+## Hooks del lado del servidor
+
+Estos se usan en **repositorios remotos**, como los que están en servidores de GitLab o GitHub (aunque en GitHub no los ves directamente, ellos los usan por dentro).
+
+- **pre-receive**  
+  Sirve para rechazar commits si no cumplen ciertas condiciones. Por ejemplo: revisar permisos del usuario o evitar conflictos.
+
+- **update**  
+  Parecido al anterior, pero más específico. Podés decidir qué ramas se pueden actualizar y cuáles no.
+
+- **post-receive**  
+  Se ejecuta después de recibir cambios. Puede servir para enviar un correo o actualizar una interfaz con los nuevos commits.
+
+---
+
+##  ¿Cómo creo mi propio hook?
+
+Solo tenés que crear un archivo en *.git/hooks* con el nombre del hook (por ejemplo *pre-commit*), darle permisos de ejecución, y escribir ahí tu script.
+
+Podés usar cualquier lenguaje que se pueda correr desde la terminal: Bash, Python, Node, etc.
+
+```bash
+#!/bin/bash
+echo "No olvides revisar el código antes de hacer commit :)"

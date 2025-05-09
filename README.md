@@ -497,5 +497,5 @@ Aquí entra en juego la colaboración real. Se decide juntos antes de hacer merg
 🤝
 ---
 # BUENAS PRACTICAS 
-!(chill)(https://cdn.dribbble.com/userupload/20246954/file/still-2fbff1a5d29013bdd2726e542c2a42db.gif?resize=400x0)
+![chill](https://cdn.dribbble.com/userupload/20246954/file/still-2fbff1a5d29013bdd2726e542c2a42db.gif?resize=400x0)
 

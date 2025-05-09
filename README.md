@@ -19,7 +19,9 @@ Nos pasó un montón de veces: hacemos un proyecto, pero seguimos realizando má
 Entre sus ventajas están que es flexible, seguro, trabajas en equipo, sin riesgos y con mejor organización. 
 ---
 # GIT
-![Logo de Git](images/g.png) 
+
+<img src="images/g.png" alt="Logo de Git" width="300"/>
+
 
 Una vez descargado este software (segun tu sistema operativo), podemos administrar una copia alojada de nuestro repositorio localmente en nuestra máquina. 
 

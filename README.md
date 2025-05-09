@@ -341,6 +341,10 @@ $ git push origin nombre-de-tu-rama
 
 
 ```
+
+<img src="https://i.pinimg.com/736x/33/89/a2/3389a21b0ab9b5847e0359e875ad0402.jpg" alt="PR" width="400"/>
+
+
 # Flujos de trabajo
 
 En proyectos reales, especialmente cuando hay muchas personas involucradas, necesitamos una estrategia para organizarnos. Existen varios **flujos de trabajo** según el equipo, la experiencia y la frecuencia de despliegue. Como **Git Flow**, **GitHub Flow**, **Trunk Based Development** y **Ship / Show / Ask**.
@@ -621,12 +625,13 @@ $ git commit --amend -m "Mensaje del commit"
 ---
 # HOOKS, ALIAS Y TRUCOS EN GIT
 
-## ⚙️ ¿Qué es un hook en Git?
+##  ¿Qué es un hook en Git?
 
 Los **hooks** (o “ganchos”) son como trampitas automatizadas que Git ejecuta **cuando pasa algo**. Por ejemplo: justo antes de hacer un commit, justo después de hacer un merge, etc. Sirven para automatizar tareas como verificar errores, dar mensajes, o evitar que subas cosas que no deberías.
 
 Estos scripts van en la carpeta *.git/hooks/* dentro de tu proyecto. Ahí ya vienen unos de ejemplo, pero los podés editar o reemplazar por scripts propios.
 
+<img src="https://d8it4huxumps7.cloudfront.net/uploads/images/652f71f725c60_git_hooks_01.jpg?d=2000x2000" alt="chill" width="300"/>
 ---
 
 ## 🖥Hooks del lado del cliente
@@ -728,3 +733,89 @@ node_modules/
 .DS_Store
 ```
 ---
+#RESUMEN DE COMANDOS IMPORTANTES
+
+```bash
+
+
+# CONFIGURACIÓN INICIAL
+git config --global user.name "Tu Nombre"
+git config --global user.email "tuemail@example.com"
+git config --global init.defaultBranch main
+
+# INICIAR REPOSITORIO
+git init
+
+# 🔍 VER ESTADO DE ARCHIVOS
+git status
+
+#  AGREGAR ARCHIVOS AL STAGE
+git add nombre-del-archivo
+git add .   # Agrega todo
+
+# 🧠 HACER COMMIT
+git commit -m "Mensaje claro y útil"
+
+# 🔁 VER HISTORIAL DE COMMITS
+git log
+git log --oneline
+git log --oneline --graph --all  # Bonito y visual
+
+# SUBIR CAMBIOS A GITHUB
+git remote add origin https://github.com/usuario/repositorio.git
+git push -u origin main    # Primera vez
+git push origin main       # Después
+
+# TRAER CAMBIOS DE GITHUB
+git pull origin main
+git pull origin main --allow-unrelated-histories  # Si los historiales son distintos
+
+#  RAMAS
+git branch               # Ver ramas
+git checkout -b rama     # Crear y moverse a nueva rama
+git checkout rama        # Cambiar de rama
+git merge rama           # Fusionar una rama a la actual
+git branch -d rama       # Eliminar rama local
+
+# 🔃 PULL REQUEST 
+# 1. Subes tu rama: git push origin nombre-de-la-rama
+# 2. Vas a GitHub y creas un Pull Request
+
+# 🔄 SINCRONIZAR UN FORK
+git remote add upstream https://github.com/original-user/repo.git
+git fetch upstream
+git merge upstream/main
+git push origin main
+
+#  DESHACER CAMBIOS
+git checkout -- archivo             # Revertir cambios no guardados
+git reset HEAD archivo              # Quitar del stage
+git reset --soft HEAD~1            # Deshacer último commit, guardar cambios
+git revert HEAD                     # Revertir último commit (sin borrar)
+
+#  .GITIGNORE
+# Crear un archivo llamado .gitignore y poner cosas como:
+# node_modules/
+# *.log
+# .DS_Store
+
+# ⚙ ALIAS ÚTILES
+git config --global alias.cm "commit -m"
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.last "log -1 HEAD"
+
+# 🪝 HOOKS (en .git/hooks/)
+# Crear un archivo llamado pre-commit (sin extensión)
+# y darle permisos de ejecución
+
+# ✔️ ÚLTIMOS COMANDOS PARA SUBIR CAMBIOS
+git add .
+git commit -m "Últimos apuntes: resumen de comandos"
+git push origin main
+
+```
+---
+<img src="https://i.pinimg.com/736x/d9/2d/cf/d92dcfea43146255651a717989fdd59b.jpg" alt="chill" width="300"/>
+

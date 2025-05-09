@@ -64,7 +64,7 @@ $ git init
 ```
 Luego se creará una **rama** principal llamada *main* o *master* (definición más adelante)
 ---
-# States $ Commits 
+# States & Commits 
 ## Los tres estados de Git
 | Estado       | Descripción                                                                 | Comando clave          |
 |--------------|-----------------------------------------------------------------------------|------------------------|
@@ -95,3 +95,21 @@ Esta es l aparte importante, los commits son los que registran los cambios produ
 - Marca progreso en el desarrollo.
 
 ![Checkpoint](https://i.imgur.com/NGiUJ7S.png)
+
+Cuando hagamos un commit, se guardarán todos los cambios que tenemos en staging. Para gacerlo tenemos el siguiente comando.
+
+```bash
+  
+$ git commit //crea un commit en el repositorio y añade una referencia en la rama actual, se debe añadir un mensaje o añadirlo con
+$ git commit -m "Add a feature" //este es el título 
+$ $ git commit -m "Add a feature" -m "características o información extra
+
+//todo se guarda en el repositorio local
+
+
+```
+### 📍 HEAD 📍 
+Es un puntero que hace referencia a el lugar del historial de cambios en el que te encuentras ahora, solo puedes estar en un solo lugar.
+![estás aquí](https://cdn-icons-png.flaticon.com/512/1559/1559160.png)
+---
+## 🌿 RAMAS  🌿

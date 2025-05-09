@@ -151,7 +151,62 @@ $ git merge my-branch //la rama my-branch pasará a ser canon y crea un nuevo co
 
 $ git merge --edit //abre el editor primero
 
-& git merge --no-commit //no hará el commit automáticamente
+$ git merge --no-commit //no hará el commit automáticamente
 
 ```
+### Eliminar Ramas 🌲🪚
+
+Después de fusionarlas es normal querer eliminarlas, si se elimina una rama que no se fusionó nos saldrá un mensaje de errror.
+
+```bash
+  
+$ git branch --delete mi-primera-rama
+
+//para eliminar la rama sin importar que esté o no mergeada 
+$ git branch -D mi-primera-rama
+
+```
+Ten cuidado de no eliminar las ramas que necesites, perderás horas de trabajo.
+
+---
+Eliminar ramas en repositorios locales: Hora de podar
+
+$ git remote prune origin --dry-run
+
+$ git remote prune origin
+
+#### Merge Fast-Forward 
+Ocurre cuando la rama de destino (ej. main) no tiene nuevos commits después de que creaste tu rama (ej. feature). Git simplemente mueve el puntero de main al último commit de feature, sin crear un commit de merge adicional. 
+#### Merge No Fast-forward
+Forza la creación de un nuevo commit de merge incluso si es posible un fast-forward. Esto sirve para mantener un historial explícito de que hubo una fusión, útil para rastreabilidad. Se usa con el flag --no-ff:
+
+```bash
+  
+git checkout main
+git merge feature  # Si es posible, hará fast-forward
+
+//No fast forward
+git merge --no-ff feature  # Siempre crea un commit de merge
+
+```
+### Conflictos 
+
+Ocurre cuando dos ramas modifican las mismas líneas en un archivo y Git no puede fusionarlas automáticamente.
+git marcará las diferencias:
+<<<<<<< HEAD  
+Código de la rama actual (ej. `main`)  
+=======  
+Código de la rama que intentas fusionar (ej. `changes`)  
+>>>>>>> changes
+
+#### ¿Cómo resolverlo? 
+
+ Abre el archivo conflictivo y elige entre:
+- Conservar los cambios de HEAD (tu rama actual).
+- Conservar los cambios de la otra rama (changes).
+- Combinar manualmente las partes útiles de ambos.
+
+Elimina las marcas (<<<<<<<, =======, >>>>>>>) y guarda el archivo con el código final
+
+---
 

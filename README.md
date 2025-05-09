@@ -283,3 +283,55 @@ git push origin rama-que-no-existe
 # Mensaje: error: src refspec rama-que-no-existe does not match any
 ```
 # PULL REQUEST (PR)
+Una Pull Request (abreviado PR) es una solicitud para fusionar los cambios que hiciste en una rama (por ejemplo, en un fork) hacia otra rama de un repositorio. Es una de las funciones más importantes en trabajo colaborativo con Git y GitHub, pero también puedes usarla para que alguien revise tu código antes de unirlo, incluso si estás trabajando en solitario.
+### ¿Cuándo se usa?
+- Cuando trabajas en colaboración con otras personas.
+- Cuando haces cambios en un proyecto y deseas que el dueño del repositorio los revise y acepte.
+- Para mantener un flujo ordenado de revisión, discusión y fusión de código.
+
+### ¿Cómo hacer una PR?
+1. Haz cambios en una rama diferente a main (ej. feature/login).
+2. Sube (push) tu rama al repositorio remoto:
+
+```bash
+$ git push origin nombre-de-tu-rama
+
+```
+3. GitHub te sugerirá automáticamente crear una Pull Request.
+Al dar clic en Compare & pull request, se abrirá un formulario donde debes:
+- Verificar que estás solicitando cambios al repositorio correcto (¡no a tu propio fork!).
+- Comparar ramas: la tuya (feature) con la de destino (ej. main del repo original).
+- Escribir un título claro y una descripción que explique qué hiciste y por qué.
+- Confirmar y crear la Pull Request.
+
+### Marcar una Pull Request como Borrador
+Cuando aún no has terminado tus cambios pero quieres mostrarlos o empezar a recibir comentarios, puedes marcar tu PR como borrador.
+Esto indica que todavía no está lista para fusionar, pero ya puede ser vista y revisada por otros. Puedes hacerlo al momento de crearla, usando el botón "Create draft pull request".
+
+### Hacer una buena PR
+- Lee el archivo CONTRIBUTING.md si el repositorio lo tiene.
+- Respeta el estilo del repositorio (nombres de variables, uso de comillas, formato)
+- Haz cambios específicos: una PR debería enfocarse en una sola funcionalidad.
+- Explica bien qué hiciste: usa lenguaje claro y directo.
+- Si puedes, adjunta capturas, gifs o videos mostrando tu funcionalidad.
+
+### Revisar una PR
+- Sé empático y respetuoso. Valora el tiempo de quien escribió el código.
+- Sé claro y específico en tus comentarios. No digas solo "esto está mal", explica por qué.
+- Usa las sugerencias de código en GitHub para proponer cambios concretos.
+- Entiende el contexto del cambio: a veces un código "no perfecto" resuelve el problema.
+- Puedes ayudar creando un archivo CONTRIBUTING.md con reglas y estándares del repo.
+
+```bash
+# Crear y cambiar a una nueva rama (antes de empezar cambios)
+$ git switch -c nombre-de-tu-rama
+
+# Hacer commit de tus cambios
+$ git add .
+$ git commit -m "Agrega formulario de contacto"
+
+# Subir tu rama al repositorio remoto
+$ git push origin nombre-de-tu-rama
+
+
+```

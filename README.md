@@ -120,7 +120,7 @@ Es decir que cuando trabajas en grupo con un mismo código, cada uno trabajará 
 
 Piensa en ellas como lineas de otros universos paralelos en el que se realizarán diferentes cambios, desde los más pequeños; estas se crea a partir de los commits y más adelante podrás fusionarlas para que tenga los cambios bien implementados. 
 
-![multiversos](https://i.pinimg.com/736x/56/01/18/56011893ece6df292d8362c9978a8f5a.jpg)
+![multiversos](images/spider.png)
 
 ### Comandos
 
@@ -189,7 +189,7 @@ git merge feature  # Si es posible, hará fast-forward
 git merge --no-ff feature  # Siempre crea un commit de merge
 
 ```
-### Conflictos
+### Conflictos ⚠️
 
 
 Ocurre cuando dos ramas modifican las mismas líneas en un archivo y Git no puede fusionarlas automáticamente.
@@ -213,5 +213,5 @@ Código de la rama que intentas fusionar (ej. `changes`)
 Elimina las marcas (<<<<<<<, =======, >>>>>>>) y guarda el archivo con el código final
 
 ---
-# GITHUB 
+# GITHUB 🐱
 ![Logo de GitHub](https://i.pinimg.com/736x/dc/16/3b/dc163b42fb863411d390c6dfba7ebf73.jpg) 

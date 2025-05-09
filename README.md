@@ -335,3 +335,167 @@ $ git push origin nombre-de-tu-rama
 
 
 ```
+# Flujos de trabajo
+
+En proyectos reales, especialmente cuando hay muchas personas involucradas, necesitamos una estrategia para organizarnos. Existen varios **flujos de trabajo** según el equipo, la experiencia y la frecuencia de despliegue. Como **Git Flow**, **GitHub Flow**, **Trunk Based Development** y **Ship / Show / Ask**.
+
+---
+
+# GIT FLOW
+
+Es uno de los flujos más clásicos. Divide el proyecto en **ramas principales** y **ramas de apoyo**, lo que permite trabajar en distintas etapas del proyecto al mismo tiempo.
+
+### 🌳 Ramas principales
+| Rama | Propósito |
+|------|-----------|
+| `main` o `master` | Código en producción (estable) |
+| `develop` | Código en pre-producción, donde se integran nuevas funcionalidades |
+
+---
+
+### 🔧 Ramas de apoyo
+
+| Rama | ¿Desde dónde se crea? | ¿Dónde se fusiona? | Convención |
+|------|------------------------|--------------------|------------|
+| `feature-*` | `develop` | `develop` | Nuevas características |
+| `release-*` | `develop` | `main` y `develop` | Preparar lanzamientos |
+| `hotfix-*` | `main` | `main` y `develop` (o release) | Solución urgente a errores |
+
+---
+
+### Crear ramas feature
+
+```bash
+$ git switch develop
+$ git checkout -b feature-nueva-funcionalidad
+
+
+```
+
+Al terminar, fusionamos en develop:
+```bash
+$ git checkout develop
+$ git merge --no-ff feature-nueva-funcionalidad
+$ git branch -d feature-nueva-funcionalidad
+
+
+```
+El flag `--no-ff` asegura que se cree un commit de merge, útil para rastrear los cambios de esa rama.
+
+---
+
+### Ramas release
+
+Se usan para pulir detalles antes del lanzamiento. Pueden recibir pequeñas correcciones o cambios menores.
+```bash
+
+$ git checkout -b release-1.0 develop
+//Luego se fusionan:
+$ git checkout main
+$ git merge --no-ff release-1.0
+$ git checkout develop
+$ git merge --no-ff release-1.0
+$ git branch -d release-1.0
+
+```
+---
+
+### Ramas hotfix
+
+Son urgencias. Se crean desde `main` para solucionar errores ya desplegados.
+```bash
+$ git checkout -b hotfix-1.0.1 main
+# corregimos el error...
+$ git add .
+$ git commit -m "Hotfix: corrige bug crítico"
+$ git checkout main
+$ git merge --no-ff hotfix-1.0.1
+$ git checkout develop
+$ git merge --no-ff hotfix-1.0.1
+$ git branch -d hotfix-1.0.1
+
+```
+
+
+---
+
+## 🐙 GITHUB FLOW
+
+Una alternativa más simple que GitFlow, ideal para despliegues frecuentes. Se basa en:
+
+1. Crear una rama desde `main`
+2. Subir cambios y abrir una Pull Request
+3. Discutir y revisar los cambios
+4. Fusionar en `main`
+
+```bash
+$ git checkout -b feature-login main
+$ git add .
+$ git commit -m "Agrega login"
+$ git push origin feature-login
+```
+
+Está orientado a colaboración, uso intensivo de PRs y CI (integración continua).
+
+---
+
+## TRUNK BASED DEVELOPMENT
+
+Aquí **todo el trabajo ocurre en la rama principal** (`main` o `trunk`). Las ramas auxiliares existen pero duran poco (1-2 días máximo).
+
+- Se hacen **commits frecuentes y pequeños** directamente en `main`
+- Requiere un **sistema robusto de CI/CD** para detectar errores antes de llegar a producción
+- Ideal para equipos con mucha confianza y colaboración
+
+```bash
+$ git checkout main
+$ git pull
+$ git add .
+$ git commit -m "Pequeño ajuste en layout"
+$ git push
+```
+
+Con rollback automático, tests y monitoreo constante, se reduce el miedo a fallar.
+
+---
+
+##  SHIP / SHOW / ASK
+
+Una estrategia híbrida para balancear velocidad y revisión. Clasifica los cambios en 3 tipos:
+
+### 🚢 Ship
+Fusionas directamente a `main`, sin revisión. Ideal para:
+- Documentación
+- Fixes simples
+- Refactors triviales
+
+```bash
+$ git commit -m "Actualiza README"
+$ git push origin main
+```
+
+---
+
+### Show
+Haces una Pull Request que pasa por CI, pero no esperas revisión manual. Se fusiona rápido. Ideal para:
+Funcionalidades pequeñas y mejoras que siguen el patrón del proyecto
+
+```bash
+$ git checkout -b show-refactor
+$ git push origin show-refactor
+```
+
+---
+
+### Ask
+Haces una PR esperando **revisión y debate**. Ideal cuando:
+- Hay dudas
+- El código es complejo
+- Quieres feedback del equipo
+
+Aquí entra en juego la colaboración real. Se decide juntos antes de hacer merge.
+🤝
+---
+
+
+

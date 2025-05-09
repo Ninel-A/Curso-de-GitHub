@@ -19,5 +19,5 @@ Nos pasó un montón de veces, hacemos un proyecto, pero seguimos realizando má
 Entre sus ventajas están que es flexible, seguro, trabajas en equipo, sin riesgos y con mejor organización. 
 
 # GIT
-![Logo de Git](images/gitl.png) 
+![Logo de Git](images/gitlog.jpg) 
  

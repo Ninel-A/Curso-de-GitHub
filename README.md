@@ -51,7 +51,7 @@ $ git config --local --list  //muestra configuración del repositorio local
 $ git config --system --list //muestra configuracion del git del sistema
 ```
 ---
-## Iniciando un nuevo proyecto 🏁🏎️
+## Iniciando un nuevo repo 🏁🏎️
 Para crear un repositorio local tenemos algunos comandos 
 ```bash
 $ git init nuevo-proyecto //usar guiones en lugar de espacios al indicar el nombre
@@ -219,8 +219,15 @@ Es un servicio de alojamiento en la nube de código fuente, basado en el sistema
 
 ## Repositorios Remotos
 Estos repositorios están hospedados en un servidor y que servirá de punto de sincronización entre diferentes repositorios locales.
----
 
+Navegando por GitHub podemos encontrar nuestro perfil, en el que podemos ver todos nuestros repositorios, proyectos, etc.
+![miPerfil](images/misrepos.png)
+
+En cada repositorio podemos ver los siguientes apartados. 
+![opciones](images/opciones.png)
+
+Y también podemos buscar perfiles, repositorios de otros y más.
+![buscador](images/buscador.png)
 
 ---
 

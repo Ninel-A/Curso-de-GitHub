@@ -189,15 +189,19 @@ git merge feature  # Si es posible, hará fast-forward
 git merge --no-ff feature  # Siempre crea un commit de merge
 
 ```
-### Conflictos 
+### Conflictos
+
 
 Ocurre cuando dos ramas modifican las mismas líneas en un archivo y Git no puede fusionarlas automáticamente.
 git marcará las diferencias:
-<<<<<<< HEAD  
+```bash
+  <<<<<<< HEAD  
 Código de la rama actual (ej. `main`)  
 =======  
 Código de la rama que intentas fusionar (ej. `changes`)  
 >>>>>>> changes
+
+```
 
 #### ¿Cómo resolverlo? 
 

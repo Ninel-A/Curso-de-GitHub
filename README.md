@@ -27,6 +27,7 @@ Una vez descargado este software (segun tu sistema operativo), podemos administr
 
 ## 🎁Repositorio : 
 Es una carpeta en la que almacenaremos todo lo que nuestro proyecto necesita, versiones de ficheros, imagenes, documentos; recuerda cada cambio que haces. Es un pilar fundamental tanto de Git como de GitHub.
+<img src="images/chest.jpg" alt="como un cofre" width="300"/>
 
 
  Git utiliza la terminal, desde ella puedes ejecutar comandos para interactuar con el sistema, pero antes debemos registrarnos: Configurar nuestro usuario y gmail que será con los que crearemos nuestra cuenta en GitHub. 
@@ -121,7 +122,8 @@ Es decir que cuando trabajas en grupo con un mismo código, cada uno trabajará 
 
 Piensa en ellas como lineas de otros universos paralelos en el que se realizarán diferentes cambios, desde los más pequeños; estas se crea a partir de los commits y más adelante podrás fusionarlas para que tenga los cambios bien implementados. 
 
-![multiversos](images/spider.png)
+<img src="images/spider.png" alt="multiversos?" width="300"/>
+
 
 ### Comandos
 

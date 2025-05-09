@@ -236,5 +236,50 @@ Y también podemos buscar perfiles, repositorios de otros y más.
 ---
 
 
-###Clonar un repositorio remoto creado previamente:
-Esto significa descargar una copia exacta del proyecto desde el servidor remoto, a nuestra computadora local. 
+### Clonar un repositorio remoto creado previamente:
+Esto significa descargar una copia exacta del proyecto desde el servidor remoto, a nuestra computadora local. Para hacerlo necesitamos su dirección HTTPS o SSH que lo encontramos al presionar el botón **Code** en nuestro repositorio
+![code](images/code.png)
+
+```bash
+  //con SSH
+ $ git clone git@github.com:user/libro-javascript.git
+
+// con HTTPS
+$ git clone https://github.com/user-libro-javascript.git
+```
+### Enlazar un repositorio local con uno remoto:
+Para vincular tu repo local con uno remoto:
+```bash
+git remote add <alias> <url-del-repositorio>
+//con https
+git remote add origin https://github.com/usuario/repo.git
+
+//con SSH
+git remote add origin git@github.com:usuario/repo.git
+```
+
+### Escribiendo en nuestro repositorio remoto:
+Para enviar cambios de un repositorio local a uno remoto debemos ejecutar un comando y pasarle dos parámetros: el alias del repositorio remoto y el nombre de la rama sobre la cual queremos enviar cambios. 
+```bash
+#el alias es origin y la rama main
+$ git push origin main
+```
+Si no te deja hacer *push* puede ser porque el repositorio local no tiene cambios que ocurrieron en el repositorio remoto. No es ideal hacerlo pero el comando -f  fuerza el push y salta el error.
+
+### Crear ramas remotas:
+
+```bash
+git switch -c nombre-rama  # Crea y cambia a la nueva rama
+# Equivalente a:
+# git branch nombre-rama && git switch nombre-rama
+git push origin nombre-rama  # Sube la rama al remoto (origin)
+git branch -a  # Muestra todas las ramas (locales y remotas)
+# Después de hacer commits locales:
+git push origin nombre-rama  # Sube los nuevos commits
+
+//errores comunes
+# Error al intentar subir rama inexistente
+git push origin rama-que-no-existe
+# Mensaje: error: src refspec rama-que-no-existe does not match any
+```
+# PULL REQUEST (PR)

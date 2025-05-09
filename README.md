@@ -23,9 +23,9 @@ Entre sus ventajas están que es flexible, seguro, trabajas en equipo, sin riesg
 
 Una vez descargado este software (segun tu sistema operativo), podemos administrar una copia alojada de nuestro repositorio localmente en nuestra máquina. 
 
-## Repositorio : 
+## 🎁Repositorio : 
 Es una carpeta en la que almacenaremos todo lo que nuestro proyecto necesita, versiones de ficheros, imagenes, documentos; recuerda cada cambio que haces. Es un pilar fundamental tanto de Git como de GitHub.
-![como un cofre](images/chest.jpg) 
+
 
  Git utiliza la terminal, desde ella puedes ejecutar comandos para interactuar con el sistema, pero antes debemos registrarnos: Configurar nuestro usuario y gmail que será con los que crearemos nuestra cuenta en GitHub. 
 
@@ -353,7 +353,7 @@ Es uno de los flujos más clásicos. Divide el proyecto en **ramas principales**
 
 ---
 
-### 🔧 Ramas de apoyo
+### Ramas de apoyo
 
 | Rama | ¿Desde dónde se crea? | ¿Dónde se fusiona? | Convención |
 |------|------------------------|--------------------|------------|
@@ -496,6 +496,6 @@ Haces una PR esperando **revisión y debate**. Ideal cuando:
 Aquí entra en juego la colaboración real. Se decide juntos antes de hacer merge.
 🤝
 ---
-
-
+# BUENAS PRACTICAS 
+!(chill)(https://cdn.dribbble.com/userupload/20246954/file/still-2fbff1a5d29013bdd2726e542c2a42db.gif?resize=400x0)
 

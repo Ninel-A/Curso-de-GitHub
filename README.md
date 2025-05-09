@@ -499,3 +499,22 @@ Aquí entra en juego la colaboración real. Se decide juntos antes de hacer merg
 # BUENAS PRACTICAS 
 ![chill](https://cdn.dribbble.com/userupload/20246954/file/still-2fbff1a5d29013bdd2726e542c2a42db.gif?resize=400x0)
 
+# DESHACER CAMBIOS 
+
+## Deshacer el último commit
+Ya sea porque hicimos un commit innecesario por error, añadimos sin querer más archivos, queriamos hacer commit de otra cosa, etc. Pues no hay que preocuparnos, si existe manera de revertir esto si aún no lo llevamos al repo remoto. 
+```bash
+$ git reset --soft HEAD~1 #Si queremos mantener los cambios 
+```
+Con *reset* la rama retrocede a version que le indicamos. HEAD~1 esta es la version anterior inmediatade la actual. Con *soft* los cambios se mantienen locales, no se eliminan del todo.
+
+SI ESTAMOS SEGUROS DE QUE NO QUEREMOS MANTENER LOS CAMBIOS
+```bash
+$ git reset --HARD HEAD~1 
+```
+Luego, para hacer el último commit se usa:
+```bash
+$ git commit --amend -m "Mensaje del commit"
+```
+---
+# 🧪 HOOKS, ALIAS Y TRUCOS EN GIT

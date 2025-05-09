@@ -223,8 +223,12 @@ Estos repositorios están hospedados en un servidor y que servirá de punto de s
 Navegando por GitHub podemos encontrar nuestro perfil, en el que podemos ver todos nuestros repositorios, proyectos, etc.
 ![miPerfil](images/misrepos.png)
 
+---
+
 En cada repositorio podemos ver los siguientes apartados. 
 ![opciones](images/opciones.png)
+
+---
 
 Y también podemos buscar perfiles, repositorios de otros y más.
 ![buscador](images/buscador.png)

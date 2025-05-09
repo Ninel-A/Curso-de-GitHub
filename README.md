@@ -671,3 +671,52 @@ Podés usar cualquier lenguaje que se pueda correr desde la terminal: Bash, Pyth
 ```bash
 #!/bin/bash
 echo "No olvides revisar el código antes de hacer commit :)"
+```
+
+## ✏️ Alias en Git
+
+Un alias en Git es como un atajo para no tener que escribir comandos largos todo el tiempo. Se configuran así:
+
+```bash
+git config --global alias.cm "commit -m"
+```
+Con eso, en vez de escribir:
+```bash
+git commit -m "mensaje"
+//solo haces
+git cm "mensaje"
+```
+
+Puedes crear alias para casi todo. Por ejemplos:
+
+```bash
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.last "log -1 HEAD"
+```
+
+##Trucos y tips que salvan vidas
+Ver tu historial de commits bonito y compacto:
+```bash
+
+git log --oneline --graph --all
+```
+Ver solo los archivos modificados, sin detalles:
+```bash
+git diff --name-only
+```
+Deshacer el último commit (pero sin borrar los cambios):
+```bash
+
+git reset --soft HEAD~1
+```
+Ignorar archivos que no querés subir nunca
+Crea un archivo llamado .gitignore y agregas líneas como:
+
+```bash
+*.log
+node_modules/
+.DS_Store
+```
+---

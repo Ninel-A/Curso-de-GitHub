@@ -499,6 +499,100 @@ Aquí entra en juego la colaboración real. Se decide juntos antes de hacer merg
 # BUENAS PRACTICAS 
 ![chill](https://cdn.dribbble.com/userupload/20246954/file/still-2fbff1a5d29013bdd2726e542c2a42db.gif?resize=400x0)
 
+# ✅ BUENAS PRÁCTICAS CON GIT ✅
+
+Aunque usar Git se basa en comandos simples, existen ciertas prácticas recomendadas que ayudan a que el trabajo sea más claro, colaborativo y profesional. En esta sección aprenderás cuándo hacer commits, cómo escribirlos correctamente, cómo nombrar tus ramas y cómo manejar el historial de tu proyecto de forma responsable.
+
+---
+
+## ¿Cada cuánto debería hacer un commit?
+
+La respuesta es sencilla: **a menudo**. Es mucho mejor hacer commits pequeños que agrupen pequeñas mejoras o partes lógicas de tu código, en lugar de esperar a terminar todo y hacer un único commit gigante. Cada tarea que avances puede ser convertida en un commit. Así se facilita el seguimiento, la revisión y la posibilidad de revertir cambios específicos si algo falla. 
+
+Esto no significa que debas hacer commits sin sentido. Cada commit debe tener un propósito claro y no dejar el proyecto en un estado roto o inutilizable.
+
+---
+
+## Escribir buenos mensajes de commit
+
+El mensaje de commit debe comenzar con un **verbo en imperativo**, como *Add*, *Fix*, *Change*, o *Remove*. Esto permite que el mensaje sea claro y directo. Por ejemplo:
+
+- "Add search functionality"
+- "Fix error in login"
+- "Change layout structure"
+- "Remove unused imports"
+
+Estos mensajes responden a la idea: *"Si aplico este commit, entonces este commit..."* y completan frases útiles para otros desarrolladores.
+
+Evita el uso de punto final o puntos suspensivos. Son innecesarios y ocupan espacio valioso. Además, intenta no superar los **50 caracteres** en la línea principal del mensaje. Si necesitas explicar más cosas, puedes hacerlo en el cuerpo del commit, debajo del título.
+
+```bash
+$ git commit -m "Add profile picture upload"
+```
+
+Para agregar más contexto, puedes escribir así:
+
+```bash
+$ git commit -m "Fix image scaling issue" -m "Solves the distortion problem when images exceed 800px width."
+```
+
+Otra buena práctica es usar **prefijos semánticos** que indican el tipo de cambio:
+
+- **feat:** nueva característica
+- **fix:** corrección de error
+- **docs:** cambios en documentación
+- **style:** formato, espacios, tabulación (sin afectar código)
+- **refactor:** cambios internos sin cambiar funcionalidad
+- **perf:** mejoras de rendimiento
+- **test:** pruebas agregadas o modificadas
+- **build:** ajustes de compilación o dependencias
+- **ci:** ajustes en integración continua
+
+Ejemplo de commit con prefijo y scope:
+
+```bash
+$ git commit -m "feat(auth): add two-factor authentication"
+```
+
+También puedes usar herramientas como **Husky** que permiten ejecutar scripts antes de hacer commits, como correr los tests automáticamente para asegurarte de que no estás subiendo errores al repositorio.
+
+---
+
+## Escribir buenos nombres de rama
+
+El nombre de la rama debe seguir una convención clara y ser **descriptivo**, para que cualquier persona pueda entender qué se está trabajando con solo leer el nombre.
+
+Lo ideal es comenzar con la acción que se realiza:
+
+- **feature/** para nuevas funcionalidades
+- **bug/** para corrección de errores
+- **hotfix/** para soluciones urgentes
+- **experiment/** para pruebas que probablemente no serán fusionadas
+
+Un buen nombre sería: `feature/login-form` o `bug/fix-navbar-overlap`.
+
+Si tu equipo usa alguna herramienta de seguimiento como Jira, también puedes incluir el ID del ticket en el nombre de la rama, como por ejemplo: `feature/JIRA-1234-new-dashboard`.
+
+```bash
+$ git checkout -b feature/formulario-contacto
+```
+
+---
+
+## ¿Debería alterar el historial de mi proyecto?
+
+Modificar el historial (con `git rebase`, por ejemplo) no suele ser una buena idea, **a menos que hayas expuesto información sensible**, como contraseñas o claves de API. En esos casos, lo mejor es rotar las claves y contraseñas lo antes posible, ya que eliminarlas del historial **no garantiza que desaparezcan realmente**.
+
+Si el error no es grave, como un commit mal hecho o código que ya no sirve, lo recomendable es usar `git revert` para **crear un nuevo commit que revierta los cambios anteriores**, manteniendo así un historial transparente y seguro.
+
+```bash
+$ git revert ID-del-commit
+```
+
+Solo considera alterar el historial si entiendes perfectamente lo que estás haciendo, y si todos los colaboradores están al tanto. De lo contrario, puedes romper el trabajo de otros y causar más problemas que soluciones.
+
+---
+
 # DESHACER CAMBIOS 
 
 ## Deshacer el último commit

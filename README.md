@@ -214,4 +214,4 @@ Elimina las marcas (<<<<<<<, =======, >>>>>>>) y guarda el archivo con el códig
 
 ---
 # GITHUB 
-![Logo de GitHub](https://i.pinimg.com/736x/2f/74/9e/2f749e2832f7d6b5009e16628ef78029.jpg) 
+![Logo de GitHub](https://i.pinimg.com/736x/dc/16/3b/dc163b42fb863411d390c6dfba7ebf73.jpg) 

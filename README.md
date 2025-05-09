@@ -25,7 +25,7 @@ Una vez descargado este software (segun tu sistema operativo), podemos administr
 
 ## Repositorio : 
 Es una carpeta en la que almacenaremos todo lo que nuestro proyecto necesita, versiones de ficheros, imagenes, documentos; recuerda cada cambio que haces. Es un pilar fundamental tanto de Git como de GitHub.
-![como un cofre](images/chest.png) 
+![como un cofre](images/chest.jpg) 
 
  Git utiliza la terminal, desde ella puedes ejecutar comandos para interactuar con el sistema, pero antes debemos registrarnos: Configurar nuestro usuario y gmail que será con los que crearemos nuestra cuenta en GitHub. 
 
@@ -111,7 +111,6 @@ $ $ git commit -m "Add a feature" -m "características o información extra
 ### 📍 HEAD 📍 
 Es un puntero que hace referencia a el lugar del historial de cambios en el que te encuentras ahora, solo puedes estar en un solo lugar.
 
-![estás aquí](https://cdn-icons-png.flaticon.com/512/1559/1559160.png)
 ---
 ## 🌿 RAMAS  🌿
 Una rama es una de las versiones de la colección de archivos y directorios del repositorio. Una instntánea de la división del estado del código. Permiten realizar un desarrollo *no lineal*. 
@@ -215,3 +214,16 @@ Elimina las marcas (<<<<<<<, =======, >>>>>>>) y guarda el archivo con el códig
 ---
 # GITHUB 🐱
 ![Logo de GitHub](https://i.pinimg.com/736x/dc/16/3b/dc163b42fb863411d390c6dfba7ebf73.jpg) 
+
+Es un servicio de alojamiento en la nube de código fuente, basado en el sistema de control de versiones de git para manejar repositorios. Añade funcionalidades útiles como una UI amigable, GitHub Actions, Webhooks o Dependabot. También existen otros servicios de alojamiento como Bitbucket o Gitlab, pero a diferencia de ellos GitHub tiene una gran comunidad opensource, interfaz sencilla, con herramientas únicas. Ideal para aprender. 
+
+## Repositorios Remotos
+Estos repositorios están hospedados en un servidor y que servirá de punto de sincronización entre diferentes repositorios locales.
+---
+
+
+---
+
+
+###Clonar un repositorio remoto creado previamente:
+Esto significa descargar una copia exacta del proyecto desde el servidor remoto, a nuestra computadora local. 

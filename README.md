@@ -63,3 +63,28 @@ $ git init
 
 ```
 Luego se creará una **rama** principal llamada *main* o *master* (definición más adelante)
+---
+# States $ Commits 
+## Los tres estados de Git
+| Estado       | Descripción                                                                 | Comando clave          |
+|--------------|-----------------------------------------------------------------------------|------------------------|
+| **Modified** 🖊️  | Archivo modificado/creado/eliminado, pero *no preparado* para guardar.       | (Editas el archivo)    |
+| **Staged**   📦  | Cambios marcados para el próximo *commit*, preparado para ser aceptado en el repositorio local                | `git add archivo.txt`  |
+| **Committed** 💾 | Cambios guardados *permanentemente* en el historial del repositorio local.   | `git commit -m "mensaje"`  |
+
+Explicandolo con ejemplos podemos decir que:
+- **Modified** : como cuando haces cambios en cualquier documento
+- **Staged**: como cuando seleccionas páginas antes de imprimir
+- **Commited**: cuando ahora sí guardas los cambios en tu documento
+
+  Para restaurar cambios se usan
+  ```bash
+$ git restore index.html //restora un archivo
+$ git restore //restaura todo el directorio
+$ git restore '*.js' //restaura todos los archivos terminados en .js
+
+$ git reset index.html //deshacer del estado STAGED al MODIFIED
+
+```
+---
+## ⭐COMMITS ⭐

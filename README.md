@@ -213,4 +213,5 @@ Código de la rama que intentas fusionar (ej. `changes`)
 Elimina las marcas (<<<<<<<, =======, >>>>>>>) y guarda el archivo con el código final
 
 ---
-
+# GITHUB 
+![Logo de GitHub](https://i.pinimg.com/736x/2f/74/9e/2f749e2832f7d6b5009e16628ef78029.jpg) 

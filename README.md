@@ -27,6 +27,8 @@ Una vez descargado este software (segun tu sistema operativo), podemos administr
 
 ## 🎁Repositorio : 
 Es una carpeta en la que almacenaremos todo lo que nuestro proyecto necesita, versiones de ficheros, imagenes, documentos; recuerda cada cambio que haces. Es un pilar fundamental tanto de Git como de GitHub.
+---
+
 <img src="images/chest.jpg" alt="como un cofre" width="300"/>
 
 
@@ -501,9 +503,11 @@ Aquí entra en juego la colaboración real. Se decide juntos antes de hacer merg
 🤝
 ---
 # BUENAS PRACTICAS 
-![chill](https://cdn.dribbble.com/userupload/20246954/file/still-2fbff1a5d29013bdd2726e542c2a42db.gif?resize=400x0)
 
-# ✅ BUENAS PRÁCTICAS CON GIT ✅
+<img src="https://cdn.dribbble.com/userupload/20246954/file/still-2fbff1a5d29013bdd2726e542c2a42db.gif?resize=400x0" alt="chill" width="300"/>
+
+
+# BUENAS PRÁCTICAS CON GIT ✅
 
 Aunque usar Git se basa en comandos simples, existen ciertas prácticas recomendadas que ayudan a que el trabajo sea más claro, colaborativo y profesional. En esta sección aprenderás cuándo hacer commits, cómo escribirlos correctamente, cómo nombrar tus ramas y cómo manejar el historial de tu proyecto de forma responsable.
 

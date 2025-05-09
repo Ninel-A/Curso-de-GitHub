@@ -110,6 +110,48 @@ $ $ git commit -m "Add a feature" -m "características o información extra
 ```
 ### 📍 HEAD 📍 
 Es un puntero que hace referencia a el lugar del historial de cambios en el que te encuentras ahora, solo puedes estar en un solo lugar.
+
 ![estás aquí](https://cdn-icons-png.flaticon.com/512/1559/1559160.png)
 ---
 ## 🌿 RAMAS  🌿
+Una rama es una de las versiones de la colección de archivos y directorios del repositorio. Una instntánea de la división del estado del código. Permiten realizar un desarrollo *no lineal*. 
+
+Es decir que cuando trabajas en grupo con un mismo código, cada uno trabajará dentro de una versión (evolución del código) en paralelo. 
+
+Piensa en ellas como lineas de otros universos paralelos en el que se realizarán diferentes cambios, desde los más pequeños; estas se crea a partir de los commits y más adelante podrás fusionarlas para que tenga los cambios bien implementados. 
+
+![multiversos](https://i.pinimg.com/736x/56/01/18/56011893ece6df292d8362c9978a8f5a.jpg)
+
+### Comandos
+
+```bash
+  
+$ git branch mi-primera-rama //creamos una rama mientras estamos en la rama main
+//pero ahora queremos estar en nuestra nueva rama
+$ git switch mi-primera-rama
+
+//o puedes usar este comando y crear y cambiarte a la nueva rama al mismo tiempo
+$ git switch -c mi-primera-rama //se nombra sin espacios como los repositorios
+
+//no se podrán crear dos ramas con el mismo nombre
+
+```
+Para poder crear la rama necesitas crear al menos **un commit**.
+Listar ramas:
+- git branch
+- git branch --show-current
+- git branch --sort=-committerdate
+---
+###Fusionar ramas:
+Nuestras ramas tendrán dos destinos: o son olvidadas o son fusionadas a nuestra rama principal.
+
+```bash
+  
+$ git merge my-branch //la rama my-branch pasará a ser canon y crea un nuevo commit
+
+$ git merge --edit //abre el editor primero
+
+& git merge --no-commit //no hará el commit automáticamente
+
+```
+

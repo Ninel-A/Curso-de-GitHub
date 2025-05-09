@@ -78,13 +78,20 @@ Explicandolo con ejemplos podemos decir que:
 - **Commited**: cuando ahora sí guardas los cambios en tu documento
 
   Para restaurar cambios se usan
-  ```bash
+  
+```bash
+  
 $ git restore index.html //restora un archivo
 $ git restore //restaura todo el directorio
 $ git restore '*.js' //restaura todos los archivos terminados en .js
 
 $ git reset index.html //deshacer del estado STAGED al MODIFIED
-
 ```
----
+
 ## ⭐COMMITS ⭐
+Esta es l aparte importante, los commits son los que registran los cambios producidos en el repositorio. Como fotografías firmadas por el autor, con fecha, localización y más. También puede ser entendido como un *checkpoint* en los videojuegos ya que:
+- Guarda el estado actual de tu proyecto (código, archivos, estructura).
+- Te permite volver atrás si algo sale mal.
+- Marca progreso en el desarrollo.
+
+![Checkpoint](https://i.imgur.com/NGiUJ7S.png)
